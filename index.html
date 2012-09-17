@@ -41,13 +41,28 @@
 </script><script type="text/javascript">
 //<![CDATA[
         $(document).ready(function() {
+                // Kaŝu ĉion ĝis ni scias kian lingvon ni prezentu
                 $('div.teksto').hide();
-                $('#eo').show();
-                $("#lingvo").val("#eo");
+
+                // Ĉu la URL jam postulas ian lingvon?
+                // http://is.gd/hYjQIr 
+                var lingvo = '#eo';
+                if ($(location).attr('hash')){
+                        lingvo = $(location).attr('hash').replace(/[^#a-zA-Z\-]/g, '');
+                }
+                // Montru la DIV-blokon kun la ĝusta lingvo
+                $(lingvo).show();
+
+                // Montru la ĝustan valoron en la lingvoelektilo
+                $("#lingvo").val(lingvo);
+
+                // Elektado de alia lingvo kiam la paĝo jam estas ŝargita
                 $('#lingvo').change(function() {
-                        lingvo = $("#lingvo option:selected").val();
+                        lingvo = $("#lingvo option:selected").val().replace(/[^#a-zA-Z\-]/g, '');
                         $('div.teksto').hide();
                         $(lingvo).show();
+                        document.location.hash = lingvo;
+                        $(location).attr('hash', $lingvo);
                 });
         });
   //]]>
