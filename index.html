@@ -53,13 +53,16 @@
                 // Montru la DIV-blokon kun la ĝusta lingvo
                 $(lingvo).show();
 
-                // Montru la ĝustan valoron en la lingvoelektilo
+                // Agordu la ĝustan valoron en la lingvoelektilo (do ni estas konsekvenca)
                 $("#lingvo").val(lingvo);
 
                 // Elektado de alia lingvo kiam la paĝo jam estas ŝargita
                 $('#lingvo').change(function() {
-                        lingvo = $("#lingvo option:selected").val().replace(/[^#a-zA-Z\-]/g, '');
+			// Kaŝu ĉion ĝis ni scias kian lingvon ni prezentu
                         $('div.teksto').hide();
+			// Trovu la valoron de la lingvoelektilo
+                        lingvo = $("#lingvo option:selected").val().replace(/[^#a-zA-Z\-]/g, '');
+			// Montru la DIV-blokon kun la ĝusta lingvo
                         $(lingvo).show();
                         document.location.hash = lingvo;
                         $(location).attr('hash', $lingvo);
