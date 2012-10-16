@@ -1,5 +1,6 @@
 cd /htdocs
 put index.html 
-#put fundo.png 
-#put jquery.js
-#put favicon.ico 
+put fono.png 
+put jquery.js
+put jquery.tweet.js
+put favicon.ico 

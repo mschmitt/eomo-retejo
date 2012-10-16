@@ -32,12 +32,56 @@
                         bottom:20px;
                         left:20px;
                 }
+                .tweet, .query {
+                        font-size:x-small;
+                        margin-left:40%;
+                        width:60%;
+                }
+                .tweet_list {
+                        -webkit-border-radius:0.5em;
+                        -moz-border-radius:0.5em;
+                        border-radius:0.5em;
+                        list-style:none;
+                        margin:0;
+                        padding:0;
+                        overflow-y:hidden;
+                        background-color:#eeffee;
+                }
+                .tweet_list li {
+                        overflow-y:auto;
+                        overflow-x:hidden;
+                        padding:0.5em;
+                        list-style-type:none;
+                }
+                .tweet_list li {
+                        overflow-y:auto;
+                        overflow-x:hidden;
+                        padding:0.5em;
+                        list-style-type:none;
+                }
+                .tweet_list .tweet_even {
+                        background-color: #ddffdd;
+                }
+                .tweet_list .tweet_avatar {
+                        padding-right:0.5em;
+                        float:left;
+                }
+                .tweet_list .tweet_avatar img {
+                        vertical-align:middle;
+                }
+                .pep_rubriko {
+                        font-size:x-small;
+                        margin-left:40%;
+                        width:60%;
+                }
+
                 /*]]>*/
   </style>
 </head>
 
 <body>
   <script src="jquery.js" type="text/javascript">
+</script><script src="jquery.tweet.js" type="text/javascript">
 </script><script type="text/javascript">
 //<![CDATA[
         $(document).ready(function() {
@@ -66,6 +110,13 @@
                         $(lingvo).show();
                         document.location.hash = lingvo;
                         $(location).attr('hash', $lingvo);
+                });
+                // La kesto kun plej freŝaj pepaĵoj
+                $(".tweet").tweet({
+                        avatar_size: 32,
+                        count: 4,
+                        query: "#eomo",
+                        loading_text: "Serĉanta ĉe Twitter..."
                 });
         });
   //]]>
@@ -237,9 +288,15 @@
   <ul>
     <li><a href="https://www.facebook.com/events/156391237835263/">https://www.facebook.com/events/156391237835263/</a></li>
 
-    <li><a href="https://twitter.com/search/?q=#eomo">https://twitter.com/search/?q=#eomo</a></li>
-
     <li><a href="https://plus.google.com/u/0/s/%23eomo">https://plus.google.com/u/0/s/%23eomo</a></li>
+
+    <li><a href="https://twitter.com/search/?q=#eomo">https://twitter.com/search/?q=#eomo</a></li>
   </ul>
+
+  <div class="pep_rubriko">
+    <b>Jen la plej freŝaj pepaĵoj pri <em>#eomo</em>:</b>
+  </div>
+
+  <div class="tweet"></div>
 </body>
 </html>
