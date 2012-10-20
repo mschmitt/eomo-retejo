@@ -21,10 +21,25 @@
                         text-decoration:none;
                         color:green;
                 }
+                .teksto {
+                        /* Ne funkciu tro malbone sen JavaScript: Kaŝu ĉiujn tekstojn */
+                        /* La EO teksto havas rektan formaton 'display:inline' */
+                        display:none;
+                }
                 #lingvoelektilo {
+                        /* Kaŝu la lingvoelektilon ĝis ni scias ĉu JavaScript disponeblas */
+                        display:none;
                         position:fixed;
                         top:20px;
                         left:20px;
+                }
+                #js_averto {
+                        /* Tio ĉi aperas anstataŭ la lingvoelektilo se JavaScript ne disponeblas. */
+                        font-size:xx-small;
+                        position:fixed;
+                        top:20px;
+                        left:20px;
+                        background-color:#dddddd;
                 }
                 #kontaktoj {
                         font-size:xx-small;
@@ -33,6 +48,7 @@
                         left:20px;
                 }
                 .tweet, .query {
+                        /* Ne necesas kaŝi tion, ĉar la DIV defaŭlte estas malplena. */
                         font-size:x-small;
                         margin-left:40%;
                         width:60%;
@@ -70,6 +86,8 @@
                         vertical-align:middle;
                 }
                 .pep_rubriko {
+                        /* Kaŝu la Twitter rubrikon ĝis ni scias ĉu JavaScript disponeblas */
+                        display:none;
                         font-size:x-small;
                         margin-left:40%;
                         width:60%;
@@ -85,7 +103,14 @@
 </script><script type="text/javascript">
 //<![CDATA[
         $(document).ready(function() {
-                // Kaŝu ĉion ĝis ni scias kian lingvon ni prezentu
+                // Malkaŝu ĉiujn elementojn kiuj bezonas JavaScript
+                $('#lingvoelektilo').show();
+                $('.pep_rubriko').show();
+
+                // Kaŝu la averton ke la lingvoelektilo bezonas JavaScript
+                $('#js_averto').hide();
+
+                // Kaŝu ĉiujn tekstojn ĝis ni scias kian lingvon ni prezentu
                 $('div.teksto').hide();
 
                 // Ĉu la URL jam postulas ian lingvon?
@@ -158,24 +183,29 @@
         中文
       </option>
     </select>
-
-    <div id="kontaktoj">
-      <p>Aŭtoroj/Tradukintoj:<br />
-      <!-- ru --> <a href="https://plus.google.com/u/0/100647047226011286297">Aleksey Timin</a><br />
-      <!-- ja --> <a href="https://twitter.com/bonulo">Bonulo</a><br />
-      <!-- pt --> <a href="https://plus.google.com/103652171239012399765">Diego Souza</a><br />
-      <!-- eo en de --> <a href="https://twitter.com/unixtippse">Martin Schmitt</a><br />
-      <!-- es --> <a href="https://plus.google.com/115605092877221871047">Uriel Gurdián</a><br /></p>
-
-      <p>Retpoŝto:<br />
-      <a href="mailto:kontakto@eomo.info">kontakto@eomo.info</a></p>
-
-      <p><em>Pli da tradukaĵoj al naciaj lingvoj</em><br />
-      <em>estas bezonata. Bv. kontakti nin!</em></p>
-    </div>
   </div>
 
-  <div class="teksto" id="eo">
+  <div id="js_averto">
+    <p>Ebligu JavaScript por<br />
+    montri la lingvoelektilon.</p>
+  </div>
+
+  <div id="kontaktoj">
+    <p>Aŭtoroj/Tradukintoj:<br />
+    <!-- ru --> <a href="https://plus.google.com/u/0/100647047226011286297">Aleksey Timin</a><br />
+    <!-- ja --> <a href="https://twitter.com/bonulo">Bonulo</a><br />
+    <!-- pt --> <a href="https://plus.google.com/103652171239012399765">Diego Souza</a><br />
+    <!-- eo en de --> <a href="https://twitter.com/unixtippse">Martin Schmitt</a><br />
+    <!-- es --> <a href="https://plus.google.com/115605092877221871047">Uriel Gurdián</a><br /></p>
+
+    <p>Retpoŝto:<br />
+    <a href="mailto:kontakto@eomo.info">kontakto@eomo.info</a></p>
+
+    <p><em>Pli da tradukaĵoj al naciaj lingvoj</em><br />
+    <em>estas bezonata. Bv. kontakti nin!</em></p>
+  </div>
+
+  <div class="teksto" id="eo" style="display:inline">
     <h2 style="text-align:center">Novembro 2012</h2>
 
     <p>Bonvenon kaj dankon por via intereso pri <em>#EOMO</em>.</p>
