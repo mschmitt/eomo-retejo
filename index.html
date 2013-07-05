@@ -47,59 +47,18 @@
                         bottom:20px;
                         left:20px;
                 }
-                .tweet, .query {
+                .query {
                         /* Ne necesas kaŝi tion, ĉar la DIV defaŭlte estas malplena. */
                         font-size:x-small;
                         margin-left:40%;
                         width:60%;
                 }
-                .tweet_list {
-                        -webkit-border-radius:0.5em;
-                        -moz-border-radius:0.5em;
-                        border-radius:0.5em;
-                        list-style:none;
-                        margin:0;
-                        padding:0;
-                        overflow-y:hidden;
-                        background-color:#eeffee;
-                }
-                .tweet_list li {
-                        overflow-y:auto;
-                        overflow-x:hidden;
-                        padding:0.5em;
-                        list-style-type:none;
-                }
-                .tweet_list li {
-                        overflow-y:auto;
-                        overflow-x:hidden;
-                        padding:0.5em;
-                        list-style-type:none;
-                }
-                .tweet_list .tweet_even {
-                        background-color: #ddffdd;
-                }
-                .tweet_list .tweet_avatar {
-                        padding-right:0.5em;
-                        float:left;
-                }
-                .tweet_list .tweet_avatar img {
-                        vertical-align:middle;
-                }
-                .pep_rubriko {
-                        /* Kaŝu la Twitter rubrikon ĝis ni scias ĉu JavaScript disponeblas */
-                        display:none;
-                        font-size:x-small;
-                        margin-left:40%;
-                        width:60%;
-                }
-
                 /*]]>*/
   </style>
 </head>
 
 <body>
   <script src="jquery.js" type="text/javascript">
-</script><script src="jquery.tweet.js" type="text/javascript">
 </script><script type="text/javascript">
 //<![CDATA[
         $(document).ready(function() {
@@ -135,13 +94,6 @@
                         $(lingvo).show();
                         document.location.hash = lingvo;
                         $(location).attr('hash', $lingvo);
-                });
-                // La kesto kun plej freŝaj pepaĵoj
-                $(".tweet").tweet({
-                        avatar_size: 32,
-                        count: 4,
-                        query: "#eomo",
-                        loading_text: "Serĉanta ĉe Twitter..."
                 });
         });
   //]]>
@@ -216,8 +168,7 @@
     <p>Retpoŝto:<br />
     <a href="mailto:kontakto@eomo.info">kontakto@eomo.info</a></p>
 
-    <p><em>Pli da tradukaĵoj al naciaj lingvoj</em><br />
-    <em>estas bezonata. Bv. kontakti nin!</em></p>
+    <p><em><a href="https://gist.github.com/mschmitt/5935348">► Pli da tradukaĵoj estas bezonataj. ◄</a></em></p>
   </div>
 
   <div class="teksto" id="eo" style="display:inline">
@@ -381,11 +332,5 @@
 
     <li><a href="https://twitter.com/search/?q=#eomo">https://twitter.com/search/?q=#eomo</a></li>
   </ul>
-
-  <div class="pep_rubriko">
-    <b>Jen la plej freŝaj pepaĵoj pri <em>#eomo</em>:</b>
-  </div>
-
-  <div class="tweet"></div>
 </body>
 </html>
