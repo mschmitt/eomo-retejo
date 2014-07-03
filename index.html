@@ -26,6 +26,13 @@
                         /* La EO teksto havas rektan formaton 'display:inline' */
                         display:none;
                 }
+				.teksto_dmd {
+                        /* Ne funkciu tro malbone sen JavaScript: Kaŝu ĉiujn tekstojn */
+                        /* La EO teksto havas rektan formaton 'display:inline' */
+                        display:none;
+                        direction:rtl;
+                }
+
                 #lingvoelektilo {
                         /* Kaŝu la lingvoelektilon ĝis ni scias ĉu JavaScript disponeblas */
                         display:none;
@@ -71,7 +78,8 @@
 
                 // Kaŝu ĉiujn tekstojn ĝis ni scias kian lingvon ni prezentu
                 $('div.teksto').hide();
-
+				$('div.teksto_dmd').hide();
+                
                 // Ĉu la URL jam postulas ian lingvon?
                 // http://is.gd/hYjQIr 
                 var lingvo = '#eo';
@@ -88,6 +96,7 @@
                 $('#lingvo').change(function() {
                         // Kaŝu ĉion ĝis ni scias kian lingvon ni prezentu
                         $('div.teksto').hide();
+                        $('div.teksto_dmd').hide();
                         // Trovu la valoron de la lingvoelektilo
                         lingvo = $("#lingvo option:selected").val().replace(/[^#a-zA-Z\-]/g, '');
                         // Montru la DIV-blokon kun la ĝusta lingvo
@@ -108,47 +117,51 @@
       </option>
 
       <option value="#de">
-        Deutsch
+        Deutsch (Germana)
       </option>
 
       <option value="#en">
-        English
+        English (Angla)
       </option>
 
       <option value="#es">
-        Español
+        Español (Hispana)
+      </option>
+
+      <option value="#fa">
+        فارسی (Persa)
       </option>
 
       <option value="#fr">
-        Français
+        Français (Franca)
       </option>
 
       <option value="#it">
-        Italiano
+        Italiano (Itala)
       </option>
 
       <option value="#ja">
-        日本語
+        日本語 (Japana)
       </option>
 
       <option value="#pl">
-        Polski
+        Polski (Pola)
       </option>
 
       <option value="#pt">
-        Português
+        Português (Portugala)
       </option>
 
       <option value="#ru">
-        Русский
+        Русский (Rusa)
       </option>
 
       <option value="#ur">
-        اردو
+        اردو (Urdua)
       </option>
 
       <option value="#zh">
-        中文
+        中文 (Ĉina)
       </option>
     </select>
   </div>
@@ -168,7 +181,9 @@
     <!-- pt --> <a href="https://plus.google.com/103652171239012399765">Diego Souza</a><br />
     <!-- fr --> <a href="http://emmanuel-wald.pagesperso-orange.fr/">Emmanuel Wald</a><br />
     <!-- eo en de --> <a href="https://twitter.com/unixtippse">Martin Schmitt</a><br />
-    <!-- es --> <a href="https://plus.google.com/115605092877221871047">Uriel Gurdián</a><br /></p>
+    <!-- es --> <a href="https://plus.google.com/115605092877221871047">Uriel Gurdián</a><br />
+    <!-- fa --> <a href="https://www.facebook.com/reto2012">Reza Torabi</a><br /></p>
+
 
     <p>Retpoŝto:<br />
     <a href="mailto:kontakto@eomo.info">kontakto@eomo.info</a></p>
@@ -320,7 +335,7 @@
     <p>Не существует единого перечня участников, так что кликайте на любую из следующих ссылок, чтобы найти больше эсперантистов, которые уже приняли участие.</p>
   </div>
 
-  <div class="teksto" id="ur">
+  <div class="teksto_dmd" id="ur">
     <h2 style="text-align:center">نومبر 2014</h2>
 
     <p>میں خوش آمدید اور اس میں دلچسپی ینے کا شکریہ۔ <em>#EOMO</em></p>
@@ -343,6 +358,26 @@
 
     <p>活动参与者没有集中注册，点击下列链接查看更多参与活动的世界语者：</p>
   </div>
+
+  <div class="teksto_dmd" id="fa">
+    <h2 style="text-align:center">Novembro 2014</h2>
+
+	<p>خوش آمدید و سپاس از شما برای مشارکت در #EOMO. </p>
+	
+	<p>هدف از برنامه ماه اسپرانتو Esperanto-Monato این است که به مدت یک ماه (معمولاً نوامبر/ اواخر آذر) و یا بخشی از ماه، شما در تمام یا برخی از شبکه‌های اجتماعی خود مانند فیس بوک، تویتر یا گوگل پلاس هنگام ارسال و اشتراک گذاری مطالب خود از زبان بین المللی اسپرانتو هم در بخشی از آن‌ها و یا منحصراً استفاده کنید. </p>
+	
+	<p>تا همه با هم نشان دهیم که اسپرانتو زبانی مورد استفاده و کاربردی در مناسبات روزمره است. </p>
+	
+	<p>امسال #EOMO در ۱ نوامبر ۲۰۱۴ شروع خواهد شد. </p>
+	
+	<p>قوانین عبارت‌اند از: استفاده از شبکه اجتماعی دلخواه خودتان با استفاده از علامت: #EOMO. </p>
+	
+	<p>- اگر شما عضو فیس بوک هستید، به رویداد #EOMO بپیوندید. </p>
+	
+	<p>مرکز واحدی برای شرکت کنندگان وجود ندارد، بنابراین با کلیک روی هر یک از لینک‌های زیر برای پیدا کردن دیگر اسپرانتودان‌هایی که می‌خواهند در این برنامه شرکت کنند، آن‌ها را بیابید:</p>
+
+  </div>
+
 
   <ul>
     <li><a href="https://www.facebook.com/events/285403741638969/">https://www.facebook.com/events/285403741638969/</a></li>
