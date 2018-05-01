@@ -11,55 +11,56 @@
 /*<![CDATA[*/
                 body {
                         font-family:sans-serif;
-                        margin-left:20%;
-                        margin-right:20%;
+                        display: grid;
+                        grid-template-columns: repeat(12, 1fr);
+                        grid-template-rows: 25px 300px;
                         background-image:url(fono.png);
                         background-repeat:no-repeat;
                         background-color:white;
-                }       
+                }
                 a {
                         text-decoration:none;
                         color:green;
                 }
-                .teksto {
-                        /* Ne funkciu tro malbone sen JavaScript: Kaŝu ĉiujn tekstojn */
-                        /* La EO teksto havas rektan formaton 'display:inline' */
-                        display:none;
-                }
-                                .teksto_dmd {
-                        /* Ne funkciu tro malbone sen JavaScript: Kaŝu ĉiujn tekstojn */
-                        /* La EO teksto havas rektan formaton 'display:inline' */
-                        display:none;
-                        direction:rtl;
-                }
-
-                #lingvoelektilo {
-                        /* Kaŝu la lingvoelektilon ĝis ni scias ĉu JavaScript disponeblas */
-                        display:none;
-                        position:fixed;
-                        top:20px;
-                        left:20px;
-                }
                 #js_averto {
                         /* Tio ĉi aperas anstataŭ la lingvoelektilo se JavaScript ne disponeblas. */
                         font-size:xx-small;
-                        position:fixed;
-                        top:20px;
-                        left:20px;
                         background-color:#dddddd;
                 }
                 #kontaktoj {
-                        font-size:xx-small;
-                        position:fixed;
-                        bottom:20px;
-                        left:20px;
+                        background-color: lightgray;
                 }
+
+                #teksto {
+                }
+
+                p {
+                  font-size: 150%;
+                }
+
+
                 .query {
                         /* Ne necesas kaŝi tion, ĉar la DIV defaŭlte estas malplena. */
                         font-size:x-small;
                         margin-left:40%;
                         width:60%;
                 }
+
+                header {
+                  grid-column: span 12;
+                }
+                aside {
+                  grid-column: span 1;
+                  font-size: 75%;
+                }
+                main {
+                  grid-column: 3 / 10;
+                  justify-content: center;
+                }
+                h2 {
+                  padding-top: 20px;
+                }
+
                 /*]]>*/
   </style>
 </head>
@@ -79,9 +80,9 @@
                 // Kaŝu ĉiujn tekstojn ĝis ni scias kian lingvon ni prezentu
                 $('div.teksto').hide();
                                 $('div.teksto_dmd').hide();
-                
+
                 // Ĉu la URL jam postulas ian lingvon?
-                // http://is.gd/hYjQIr 
+                // http://is.gd/hYjQIr
                 var lingvo = '#eo';
                 if ($(location).attr('hash')){
                         lingvo = $(location).attr('hash').replace(/[^#a-zA-Z\-]/g, '');
@@ -108,8 +109,11 @@
   //]]>
   </script>
 
-  <h1 style="text-align:center"><em>#EOMO</em> - Esperanto-Monato</h1>
+  <header>
+    <h1 style="text-align:center"><em>#EOMO</em> - Esperanto-Monato             </h1>
+  </header>
 
+  <aside>
   <div id="lingvoelektilo">
     <select style="margin-left:auto;margin-right:auto" id="lingvo">
       <option value="#eo">
@@ -189,7 +193,9 @@
 
     <p><em><a href="https://gist.github.com/mschmitt/5935348">► Pli da tradukaĵoj estas bezonataj. ◄</a></em></p>
   </div>
+</aside>
 
+<main>
   <div class="teksto" id="eo" style="display:inline">
     <h2 style="text-align:center">Novembro 2015</h2>
 
@@ -389,5 +395,7 @@
 
     <li><a href="http://www.tumblr.com/tagged/eomo">http://www.tumblr.com/tagged/eomo</a></li>
   </ul>
+</main>
+
 </body>
 </html>
